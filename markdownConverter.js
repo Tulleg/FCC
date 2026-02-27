@@ -25,8 +25,18 @@ function convertMarkDown () {
     html = html.replace(/\n/g, '<br>')
     
 
-
-
-
-
+return html
 }
+
+const markdownInput = document.getElementById('markdown-input');
+const htmlOutput = document.getElementById('html-output');
+const preview = document.getElementById('preview');
+
+markdownInput.addEventListener('input', () => {
+  const convertedHtml = convertMarkdown();
+  
+  htmlOutput.textContent = convertedHtml;
+  
+  
+  preview.innerHTML = convertedHtml;
+});
